@@ -32,14 +32,16 @@
 # Notes: one global variable '$verbose' is defined for output and can
 # be shared by called code (maybe this will change in the future)
 
-$: << '/home/wrk/izip/cvs/opensource/bioruby/lib/'
+$: << '/home/wrk/izip/git/opensource/bioruby-testing-pjotr/lib/'
 
-begin
-  require 'rubygems'
-  gem 'bio', '>= 1.1.0'
-rescue LoadError
+p $:
+
+# begin
+#   require 'rubygems'
+#   gem 'bio', '>= 1.1.0'
+# rescue LoadError
   require 'bio'
-end
+# end
 
 def vprint s
   print s if $verbose
