@@ -5,7 +5,5 @@
 tutorial=$1
 
 #  Convert the 'bioruby>' and '==>' markers
-cat $tutorial | sed -e "s,bioruby>,>>," | sed "s,==>,=>," > $tutorial.doctest
-~/izip/git/opensource/rubydoctest/bin/rubydoctest $tutorial.doctest
-rm -v $tutorial.doctest
 
+cat Tutorial.rd | sed -e "s,bioruby>,>>," | sed "s,==>,=>," > Tutorial.rd.tmp ; ruby -I~/izip/git/opensource/biolib/lib ../../biolib/tools/rubydoctest/bin/rubydoctest Tutorial.rd.tmp
