@@ -10,6 +10,11 @@
 #   rubydoctest mydoc.test
 #
 
+# By default point to bioruby libraries and load the Bio tree:
+print '  >> $: << "#{ENV[\'BIORUBY_HOME\']}/lib"'+"\n"
+print '  >> $: << "#{ENV[\'BIORUBY_HOME\']}/../bioruby-support/lib"'+"\n"
+# print '  >> p $:',"\n"
+print "  >> require 'bio'\n"
 ARGV.each do | fn |
   leftalign = 0
   File.open(fn).each_line do | line |

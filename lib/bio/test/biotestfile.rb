@@ -9,7 +9,7 @@ module BioTestFile
   TEST_DATA = "#{ENV['BIORUBY_HOME']}/test/data"
 
   # Read +fn+ from the test data directory
-  def read fn
+  def BioTestFile::read fn
     File.read(TEST_DATA+'/'+fn)
   end
 end
