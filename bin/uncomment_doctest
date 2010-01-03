@@ -13,23 +13,23 @@
 ARGV.each do | fn |
   leftalign = 0
   File.open(fn).each_line do | line |
-	  if line =~ /^\s*\#/
-		  source = $'
+    if line =~ /^\s*\#/
+      source = $'
       # Calculate left alignment
-			if source.strip.size > 0
-			  if source =~ /^\s*(>>|=>)\s/
-			    print source[leftalign..-1]
-				elsif source =~ /^(\s*)/
-				  # standard text
-					leftalign = $1.size
-			    print source[leftalign..-1]
-			  else
-				  leftalign = 0
-			    print source[leftalign..-1]
-				end
-			else
-  	    print source
-			end
-	  end
-	end
+      if source.strip.size > 0
+        if source =~ /^\s*(>>|=>)\s/
+          print source[leftalign..-1]
+        elsif source =~ /^(\s*)/
+          # standard text
+          leftalign = $1.size
+          print source[leftalign..-1]
+        else
+          leftalign = 0
+          print source[leftalign..-1]
+        end
+      else
+        print source
+      end
+    end
+  end
 end
